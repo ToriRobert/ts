@@ -475,6 +475,10 @@ void send_grpc_control_request() {
   request->set_plmnid("plmnid");
   request->set_ranname("ranname");
   request->set_allocated_rice2apheaderdata(apHeader);
+	
+  ctrlHeader->set_ueid("Waiting passenger 7");
+  ctrlMsg->set_targetcellid("c2B13");
+	
   request->set_allocated_riccontrolheaderdata(ctrlHeader);
   request->set_allocated_riccontrolmessagedata(ctrlMsg);
   request->set_riccontrolackreqval(api::RIC_CONTROL_ACK_UNKWON);  // not yet used in api.proto
